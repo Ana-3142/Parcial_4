@@ -12,14 +12,12 @@ def resolver_ejercicio(usuario_id):
 
     cur = con.cursor(dictionary=True)
     
-    # Validar que el usuario exista
     cur.execute("SELECT id FROM usuarios WHERE id = %s", (usuario_id,))
     if not cur.fetchone():
         print(f"\n❌ El usuario con ID {usuario_id} no existe. Por favor crea un usuario primero.")
         con.close()
         return
 
-    # Obtener ejercicio aleatorio
     cur.execute("SELECT * FROM ejercicios ORDER BY RAND() LIMIT 1")
     ej = cur.fetchone()
     
@@ -68,8 +66,7 @@ def ver_estadisticas():
         print("No hay registros de intentos aún.")
     else:
         ANCHO_TABLA = 58
-        
-        # Dibujar la tabla estructurada
+
         print("┌" + "─" * ANCHO_TABLA + "┐")
         print(f"│ {'Usuario':<22} │ {'Aciertos':<12} │ {'Promedio':<16} │")
         print("├" + "─" * ANCHO_TABLA + "┤")
