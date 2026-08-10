@@ -4,7 +4,7 @@ def conectar():
         return mysql.connector.connect(
             host="localhost",
             user="root",
-            password="", # pon tu pass de MySQL
+            password="",
             database="calculo_db"
         )
     except Exception as e:
