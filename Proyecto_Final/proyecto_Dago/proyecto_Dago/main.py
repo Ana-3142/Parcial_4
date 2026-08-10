@@ -8,11 +8,9 @@ ROJO = "\033[91m"
 RESET = "\033[0m"
 
 def imprimir_error(mensaje):
-    """Muestra los mensajes de error formateados en color rojo."""
     print(f"{ROJO}❌ Error: {mensaje}{RESET}")
 
 def imprimir_centrado(texto, ancho=55):
-    """Imprime una línea de texto centrada según un ancho específico."""
     print(texto.center(ancho))
 
 def menu():
