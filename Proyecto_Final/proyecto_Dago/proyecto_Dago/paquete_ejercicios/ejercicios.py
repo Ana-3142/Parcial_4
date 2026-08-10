@@ -9,7 +9,6 @@ def resolver_ejercicio(usuario_id):
     if not con:
         print("❌ No se pudo conectar a la base de datos.")
         return
-
     cur = con.cursor(dictionary=True)
     
     cur.execute("SELECT id FROM usuarios WHERE id = %s", (usuario_id,))
